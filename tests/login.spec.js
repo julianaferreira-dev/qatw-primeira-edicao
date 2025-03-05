@@ -17,7 +17,7 @@ test('Não deve logar quando o código de autenticação for inválido', async (
   await loginPage.informaSenha(usuario.senha);
   await loginPage.informa2FA('123456');
 
-  expect(await page.locator('span')).toContainText('Código inválido. Por favor, tente novamente.');
+  await expect(await page.locator('span')).toContainText('Código inválido. Por favor, tente novamente.');
 });
 
 test('Deve acessar a conta do usuário', async ({ page }) => {
