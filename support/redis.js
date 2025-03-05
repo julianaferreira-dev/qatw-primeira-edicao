@@ -1,7 +1,7 @@
 import { Queue } from "bullmq";
 
 const connection = {
-    host: 'paybank-redis', 
+    host: 'paybank-redis',
     port: 6379,
 }
 
@@ -15,5 +15,5 @@ export const getJob = async () => {
 }
 
 export const cleanJobs = async () => {
-    await queue.obliterate()
+    await queue.obliterate({ force: true });
 }
